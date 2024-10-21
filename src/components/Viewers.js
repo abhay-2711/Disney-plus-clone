@@ -16,31 +16,31 @@ const Viewers = (props) => {
     <Container> 
       <Wrap>  
         <img src={viewersDisney} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true} muted={true}>
           <source src={Disney} type="video/mp4" />
         </video>
       </Wrap>      
       <Wrap>
         <img src={viewersPixar} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true}  muted={true}>
           <source src={Pixar} type="video/mp4" />
         </video>
       </Wrap>
       <Wrap>
         <img src={viewersMarvel} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true}  muted={true}>
           <source src={Marvel} type="video/mp4" />
         </video>
       </Wrap>
       <Wrap>  
         <img src={viewersStarwars} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true}  muted={true}>
           <source src={StarWars} type="video/mp4" />
         </video>
       </Wrap>  
       <Wrap>   
         <img src={viewersNational} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true}  muted={true}>
           <source src={National} type="video/mp4" />
         </video>
       </Wrap>
@@ -89,6 +89,7 @@ const Wrap = styled.div`
     height: 100%;
     position: absolute;
     top: 0px;
+    left: 0px;
     opacity: 0;
     z-index: 0;
   }
