@@ -1,35 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectNewDisney } from "../features/movie/movieSlice";
+ 
 
 const NewDisney = (props) => {
+  const movies = useSelector(selectNewDisney);
+ 
   return (
-    <Container>
-      <h4>New to Disney+</h4>
-      <Content>
-            <Wrap>
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-              </Link>
-            </Wrap>
-
-            <Wrap>
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-              </Link>
-            </Wrap>
-
-            <Wrap>
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-              </Link>
-            </Wrap>
-
-            <Wrap>
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-              </Link>
-            </Wrap>
+    <Container> 
+      <h4>New to Disney plus</h4>
+      <Content> 
+        { 
+          movies && movies.map((movie,key)=>(
+            <Wrap key={key}>
+              {movie.id}
+              <Link to={"/detail/" + movie.id}>
+                <img src={movie.cardImg} alt={movie.title} />
+              </Link> 
+            </Wrap>   
+          ))}  
       </Content>
     </Container>
   );
@@ -82,5 +73,5 @@ const Wrap=styled.div`
     }
 
 `;
-export default NewDisney; 
-  
+export default NewDisney;  
+    

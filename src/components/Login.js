@@ -63,10 +63,10 @@ const BgImage = styled.div`
 
 const CTA = styled.div`
   max-width: 650px;
-  /* margin-bottom: 2vw; */
-  /* flex-wrap: wrap; */
-  display: flex;
-  flex-direction: column;
+  /* margin-bottom: 2vw; */ 
+  /* flex-wrap: wrap; */ 
+  display: flex; 
+  flex-direction: column; 
   /* justify-content: center;
     margin-top: 0;
     align-items: center;

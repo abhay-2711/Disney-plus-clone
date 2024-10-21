@@ -37,7 +37,7 @@ const ImageSlider = (props) => {
         <a>
           <img src={sliderBadag} alt="" />
         </a>
-      </Wrap>
+      </Wrap>  
 
       <Wrap>
         <a>
@@ -60,9 +60,9 @@ const Carousel=styled(Slider)`
         &:hover{
             opacity: 1;
             transition: opacity 0.2s ease 0s;
-        }
-    }
-
+        }   
+    } 
+  
     ul li button{
         &:before{
             font-size: 10px;

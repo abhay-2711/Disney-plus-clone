@@ -14,7 +14,7 @@ import National from "../videos/1564676296-national-geographic.mp4";
 const Viewers = (props) => {
   return (
     <Container> 
-      <Wrap>
+      <Wrap>  
         <img src={viewersDisney} alt="" />
         <video autoPlay={true} loop={true} playsInline={true}>
           <source src={Disney} type="video/mp4" />
@@ -32,13 +32,13 @@ const Viewers = (props) => {
           <source src={Marvel} type="video/mp4" />
         </video>
       </Wrap>
-      <Wrap>
+      <Wrap>  
         <img src={viewersStarwars} alt="" />
         <video autoPlay={true} loop={true} playsInline={true}>
           <source src={StarWars} type="video/mp4" />
         </video>
-      </Wrap>
-      <Wrap>
+      </Wrap>  
+      <Wrap>   
         <img src={viewersNational} alt="" />
         <video autoPlay={true} loop={true} playsInline={true}>
           <source src={National} type="video/mp4" />

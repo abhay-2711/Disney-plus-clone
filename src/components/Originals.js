@@ -1,33 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectOriginal } from "../features/movie/movieSlice";
+
 
 const Originals = (props) => {
+  const movies = useSelector(selectOriginal);
+
   return (
     <Container>
       <h4>Originals</h4>
       <Content>
-            <Wrap>      
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-              </Link>
-            </Wrap>  
-            <Wrap>
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-            </Link>
+        {  
+          movies && movies.map((movie,key)=>(
+            <Wrap key={key}>
+              {movie.id} 
+              <Link to={"/detail/" + movie.id}>
+                <img src={movie.cardImg} alt={movie.title} />
+              </Link> 
             </Wrap>
-            <Wrap>
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link to="/">
-              <img src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp" alt="" />
-              </Link>
-            </Wrap>
-      </Content>
+          ))}     
+      </Content>  
     </Container>
   );
 };

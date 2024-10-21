@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectRecommend } from "../features/movie/movieSlice";
+
 import axios from "axios";
 
 const API_KEY = "388fddf8a9727d1ba2334256826ee373";
@@ -40,54 +43,42 @@ x.then((value) => {
 });
 // console.log(y)
 const Recommends = (props) => {
-  return (
+
+  const movies = useSelector(selectRecommend);
+  console.log(movies, ":🛢️");
+
+  return ( 
     <Container>
       {/* <img src={y} alt="" /> */}
       <h4>Recommend for You</h4>
       <Content>
-        <Wrap>
+        {/* <Wrap>
           <Link to="/">
             <img
               src={y}
               alt=""
             />           
           </Link>
-        </Wrap>
+        </Wrap> */}
  
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp"
-              alt=""
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp"
-              alt=""
-            />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://lolalambchops.com/wp/wp-content/uploads/2019/11/Marvel-on-disney-plus-735x414.jpeg.webp"
-              alt=""
-            />
-          </Link>
-        </Wrap>
-      </Content>
+        {
+          movies && movies.map((movie,key)=>(
+            <Wrap key={key}>
+              {movie.id}
+              <Link to={"/detail/" + movie.id}>
+                <img src={movie.cardImg} alt={movie.title} />
+              </Link>
+            </Wrap>
+          ))} 
+      </Content>  
     </Container>
-  );
-};
-
+  );     
+}; 
+   
 const Container = styled.div`
   padding: 0 0 26px;
-`;
-
+`;  
+ 
 const Content = styled.div`
   display: grid;
   grid-gap: 25px;

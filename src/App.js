@@ -3,6 +3,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import './App.css';
 import Header from './components/Header';
+import Detail from './components/Detail';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Route 
           path='/home'
           element={<Home />} 
+        />
+        <Route path='/detail/:id' 
+          element={<Detail />}
         />
       </Routes>
     </Router> 

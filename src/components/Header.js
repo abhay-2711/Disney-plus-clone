@@ -92,7 +92,7 @@ const Header = (props) => {
     });
     mydata=event.target.value;
     console.log(mydata);
-  }
+  } 
   
   function handlesubmit(event){
     // console.log(event.target.value)
@@ -173,12 +173,12 @@ const Header = (props) => {
 const Nav = styled.nav`
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; 
   right: 0;
-  height: 70px;
+  height: 70px; 
   background-color: #090b13;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   padding: 0 36px;
   letter-spacing: 16px;
